@@ -6,6 +6,10 @@ Install them with:
 
     chezmoi init andreeib
 
+## Setup
+
+Temporary give full disk access to terminal app from Security > Privacy.
+
 ## Aliases
 
 Get a list: `alias`
