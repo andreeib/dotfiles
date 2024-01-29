@@ -1,0 +1,63 @@
+#!/bin/bash
+
+set -eufo pipefail
+
+echo "Installing Homebrew packages"
+
+{{ $taps := list
+    "homebrew/cask-fonts" -}}
+
+{{ $brews := list
+    "curl"
+    "wget"
+    "bat"
+    "eza"
+    "fd"
+    "gh"
+    "git"
+    "git-lfs"
+    "go"
+    "golangci-lint"
+    "volta"
+    "pyenv"
+    "jq"
+    "ripgrep"
+    "tmux"
+    "tree"
+    "mas"
+    "yt-dlp" -}}
+
+{{ $casks := list
+    "zoom"
+    "logi-options-plus"
+    "rectangle"
+    "google-chrome"
+    "libreoffice"
+    "keka"
+    "iterm2"
+    "kdiff3"
+    "docker"
+    "postman"
+    "sublime-text"
+    "visual-studio-code" -}}
+
+brew bundle --no-lock --file=/dev/stdin <<EOF
+{{ range ($taps | sortAlpha | uniq) -}}
+tap "{{ . }}"
+{{ end -}}
+
+{{ range ($brews | sortAlpha | uniq) -}}
+brew "{{ . }}"
+{{ end -}}
+
+{{ range ($casks | sortAlpha | uniq) -}}
+cask "{{ . }}"
+{{ end -}}
+
+mas "Slack", id: 803453959
+mas "Telegram", id: 747648890
+mas "WhatsApp Messenger", id: 310633997
+mas "Annotate", id: 918207447
+mas "Bitwarden", id: 1352778147
+mas "LastPass Password Manager", id: 926036361
+EOF
