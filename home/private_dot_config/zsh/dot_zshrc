@@ -12,14 +12,19 @@ SAVEHIST=10000
 # End of lines configured by zsh-newuser-install
 
 # Go binaries in path
-export PATH=$PATH:/Users/andreeib/go/bin
+export PATH="$PATH:$HOME/go/bin"
 
+# https://github.com/pyenv/pyenv?tab=readme-ov-file#set-up-your-shell-environment-for-pyenv
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
 
+# https://docs.volta.sh/reference/setup
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
+
+export EDITOR=nano
+export VISUAL="$EDITOR"
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
