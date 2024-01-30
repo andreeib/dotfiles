@@ -11,6 +11,11 @@ HISTSIZE=10000
 SAVEHIST=10000
 # End of lines configured by zsh-newuser-install
 
+# https://docs.brew.sh/Installation
+if [ -f /opt/homebrew/bin/brew ]; then
+    eval $(/opt/homebrew/bin/brew shellenv)
+fi
+
 # Go binaries in path
 export PATH="$PATH:$HOME/go/bin"
 

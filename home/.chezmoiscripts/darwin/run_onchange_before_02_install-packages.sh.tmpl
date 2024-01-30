@@ -4,6 +4,8 @@ set -eufo pipefail
 
 echo "Installing Homebrew packages"
 
+eval $(/opt/homebrew/bin/brew shellenv)
+
 {{ $taps := list
     "homebrew/cask-fonts" -}}
 
