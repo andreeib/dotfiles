@@ -23,8 +23,8 @@ fi
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 
-export EDITOR=nano
-export VISUAL="$EDITOR"
+export EDITOR=vim
+export VISUAL="code"
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
