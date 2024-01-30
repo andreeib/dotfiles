@@ -8,11 +8,13 @@ echo "Configuring system"
 # {{ template "macos" }}
 
 if [ -d "/Applications/iTerm.app" ]; then
-    dotfiles_echo "Setting up iTerm2 preferences"
+    echo "Setting up iTerm2 preferences"
 
     # Specify the preferences directory
     defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "${HOME}/.config/iterm2"
 
     # Tell iTerm2 to use the custom preferences in the directory
     defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
+
+    osascript -e 'tell application "System Events" to make new login item at end with properties {name: "iTerm",path:"/Applications/iTerm.app", hidden:false}'
 fi
