@@ -1,4 +1,4 @@
-# github.com/andreeib/dotfiles
+# Dotfiles
 
 Andreis's dotfiles, managed with [`chezmoi`](https://github.com/twpayne/chezmoi).
 
