@@ -7,7 +7,8 @@ echo "Installing Homebrew packages"
 eval $(/opt/homebrew/bin/brew shellenv)
 
 {{ $taps := list
-    "homebrew/cask-fonts" -}}
+    "homebrew/cask-fonts"
+    "andreeib/andreeib" -}}
 
 {{ $brews := list
     "curl"
@@ -42,7 +43,9 @@ eval $(/opt/homebrew/bin/brew shellenv)
     "docker"
     "postman"
     "sublime-text"
-    "visual-studio-code" -}}
+    "visual-studio-code"
+    "veracrypt"
+    "andreeib-peazip" -}}
 
 brew bundle --no-lock --file=/dev/stdin <<EOF
 {{ range ($taps | sortAlpha | uniq) -}}
