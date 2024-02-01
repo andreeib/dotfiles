@@ -9,4 +9,5 @@ VOLTA_HOME="$HOME/.volta"
 PATH="$VOLTA_HOME/bin:$PATH"
 
 npm install --global tldr
+npm install --global @bitwarden/cli
 # npm install --global typescript
